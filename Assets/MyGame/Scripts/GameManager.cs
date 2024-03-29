@@ -9,6 +9,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.BackGroundMusic();
+        EventManagerGame.onHealth.AddListener(UpdateHealth);
+    }
+    void UpdateHealth(int health)
+    {
+        if (health < 0) 
+        {
+            FinishGame();
+        }
     }
 
     // Update is called once per frame
@@ -16,5 +24,9 @@ public class GameManager : MonoBehaviour
     void FinishGame()
     {
         SceneManager.LoadScene("GameOver");
+    }
+    private void OnDisable()
+    {
+        EventManagerGame.onHealth.RemoveListener(UpdateHealth);
     }
 }

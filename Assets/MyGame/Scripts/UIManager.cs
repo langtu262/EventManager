@@ -26,5 +26,10 @@ public class UIManager : MonoBehaviour
     {
         _textCoin.text = ("Coin: " + coin.ToString());
     }
+    private void OnDisable()
+    {
+        EventManagerGame.onHealth.RemoveListener(UpdateHealth);
+        EventManagerGame.onCoin.RemoveListener(UpdateCoin);
+    }
 }
  
