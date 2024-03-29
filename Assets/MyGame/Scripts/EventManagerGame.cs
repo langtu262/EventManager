@@ -18,6 +18,7 @@ public class EventManagerGame : MonoBehaviour
     }
     public static IntEvent onHealth;
     public static IntEvent onCoin;
+    public static IntEvent onSumCoin;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,10 @@ public class EventManagerGame : MonoBehaviour
         if(onCoin == null)
         { 
             onCoin = new IntEvent(); 
+        }
+        if (onSumCoin == null)
+        {
+            onSumCoin = new IntEvent();
         }
         
     } 

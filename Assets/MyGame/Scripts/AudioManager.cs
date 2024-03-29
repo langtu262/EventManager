@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayBackgroundMusic(AudioClip clip)
     {
+        Debug.Log("am thanh da chay");
         backgroundMusic.clip = clip;
         backgroundMusic.Play();
     }

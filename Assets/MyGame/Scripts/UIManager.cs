@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         EventManagerGame.onHealth.AddListener(UpdateHealth);
-        EventManagerGame.onCoin.AddListener(UpdateCoin);
+        EventManagerGame.onSumCoin.AddListener(UpdateCoin);
        
     } 
 
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         EventManagerGame.onHealth.RemoveListener(UpdateHealth);
-        EventManagerGame.onCoin.RemoveListener(UpdateCoin);
+        EventManagerGame.onSumCoin.RemoveListener(UpdateCoin);
     }
 }
  

@@ -21,9 +21,9 @@ public class PlayerManager : MonoBehaviour
             Destroy(other.gameObject);
             EventManagerGame.onHealth?.Invoke(currentHealth);
         }
-        if (other.gameObject.name == "Coin")
+        if (other.gameObject.tag == "Coin")
         {
-            _coin += 5;
+            _coin = 5;
             Destroy(other.gameObject);
             EventManagerGame.onCoin?.Invoke(_coin);
         }
