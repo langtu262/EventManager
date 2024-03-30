@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sumCoin = PlayerPrefs.GetInt("Coin", 0);
+        sumCoin = PlayerPrefs.GetInt("Coin", 10);
         AudioManager.Instance.BackGroundMusic();
         EventManagerGame.onHealth.AddListener(UpdateHealth);
         EventManagerGame.onCoin.AddListener(UpdateCoin);
+        Invoke("loadCoin", 0.5f); // neu goi lien thi UIManager khong nhan kip
+
+
     }
     void UpdateHealth(int health)
     {
@@ -28,6 +31,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Coin", sumCoin);
         EventManagerGame.onSumCoin?.Invoke(sumCoin);
     }
+    void loadCoin()
+    {
+        EventManagerGame.onSumCoin?.Invoke(sumCoin);
+    }
+   
 
     // Update is called once per frame
 
