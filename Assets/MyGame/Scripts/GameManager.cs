@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
     void UpdateHealth(int health)
     {
-        if (health < 0) 
+        if (health < 0)
         {
             FinishGame();
         }
